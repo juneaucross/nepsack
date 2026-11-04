@@ -10,8 +10,8 @@
   <meta property="og:title" content="СЭМИАМ НЭПСЭК — Архив 003">
   <meta property="og:description" content="66 лет. 15 хитов. Ноль сожалений. Интерактивный лист персонажа D&D 5e.">
   <meta property="og:type" content="profile">
-  <meta property="og:url" content="https://juneaucross.github.io/nepsack/">
-  <meta property="og:image" content="https://juneaucross.github.io/nepsack/preview.png">
+  <meta property="og:url" content="https://juneaucross.github.io/nepsack-scene/">
+  <meta property="og:image" content="https://juneaucross.github.io/nepsack-scene/preview.png">
   <meta property="og:image:width" content="1440">
   <meta property="og:image:height" content="900">
   <meta name="twitter:card" content="summary_large_image">
@@ -165,101 +165,124 @@
 
   <main id="top">
 
-    <!-- ══════════════ HERO ══════════════ -->
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="hero__ghost" aria-hidden="true">003</div>
+    <!-- ══════════════ HERO · SCROLL-DRIVEN 3D SCENE ══════════════ -->
+    <section class="hero" id="hero" aria-labelledby="hero-title">
+      <div class="hero__stage">
+        <canvas id="scene-canvas" class="scene-canvas" aria-hidden="true"></canvas>
 
-      <div class="hero__content">
-        <p class="hero__eyebrow reveal">
-          <span class="tag"><span class="tag__dot"></span> АРХИВ 003</span>
-          <span class="hero__eyebrow-txt">ДЕЛО О ТИХОМ ВОРЕ</span>
-        </p>
+        <div class="hero__fallback" aria-hidden="true">
+        <div class="hero__art" id="hero-art" aria-hidden="true">
+          <svg class="sigil" viewBox="0 0 440 440">
+            <defs>
+              <path id="sigil-arc" d="M 34,220 A 186,186 0 0 1 406,220"/>
+              <linearGradient id="sigil-grad" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#f0a16d"/>
+                <stop offset=".55" stop-color="#e20101"/>
+                <stop offset="1" stop-color="#7fd4c1"/>
+              </linearGradient>
+            </defs>
+            <circle class="sigil__ring sigil__ring--outer" cx="220" cy="220" r="208"/>
+            <circle class="sigil__ring sigil__ring--dash" cx="220" cy="220" r="196"/>
+            <circle class="sigil__ring sigil__ring--inner" cx="220" cy="220" r="138"/>
+            <g class="sigil__ticks" id="sigil-ticks"></g>
+            <g class="sigil__runes">
+              <text class="sigil__text">
+                <textPath href="#sigil-arc" startOffset="0">СЭМИАМ НЭПСЭК · АРХИВ 003 · ХАЛФЛИНГ · ПЛУТ ·</textPath>
+              </text>
+            </g>
+            <g class="sigil__spin">
+              <polygon points="220,86 335,279 105,279" fill="none" stroke="url(#sigil-grad)" stroke-width="1"/>
+              <polygon points="220,354 105,161 335,161" fill="none" stroke="url(#sigil-grad)" stroke-width="1" opacity=".45"/>
+              <circle cx="220" cy="220" r="44" fill="none" stroke="url(#sigil-grad)" stroke-width="1"/>
+            </g>
+          </svg>
 
-        <h1 class="hero__title" id="hero-title">
-          <span class="hero__line" data-split>СЭМИАМ</span>
-          <span class="hero__line hero__line--ember" data-split>НЭПСЭК</span>
-        </h1>
-
-        <div class="hero__meta reveal">
-          <span>ХАЛФЛИНГ</span><i>/</i>
-          <span>ПЛУТ · 3</span><i>/</i>
-          <span>ХАОТИК-ГУД</span><i>/</i>
-          <span>66 ЛЕТ</span>
-        </div>
-
-        <p class="hero__lead reveal">
-          66 лет на улицах, которые не любят свидетелей. Один стеклянный глаз,
-          две ячейки заклинаний и абсолютно никакого чувства боли.
-          <em>Он не грабит — он перераспределяет.</em>
-        </p>
-
-        <div class="hero__cta reveal">
-          <a class="btn btn--primary magnetic" href="#dossier">
-            <span>ОТКРЫТЬ ДОСЬЕ</span>
-            <svg class="ico"><use href="#i-down"/></svg>
-          </a>
-          <button class="btn btn--ghost magnetic" type="button" data-roll="ability" data-label="Проверка удачи" data-bonus="0">
-            <svg class="ico"><use href="#i-dice"/></svg>
-            <span>БРОСИТЬ d20</span>
-          </button>
-        </div>
-
-        <dl class="hero__stats reveal">
-          <div><dt>ХИТЫ</dt><dd>15</dd></div>
-          <div><dt>КД</dt><dd>11</dd></div>
-          <div><dt>СКОРОСТЬ</dt><dd>25<span>фт</span></dd></div>
-          <div><dt>МАСТЕРСТВО</dt><dd>+2</dd></div>
-          <div><dt>ОПЫТ</dt><dd>2150<span>xp</span></dd></div>
-        </dl>
-      </div>
-
-      <div class="hero__art" id="hero-art" aria-hidden="true">
-        <svg class="sigil" viewBox="0 0 440 440">
-          <defs>
-            <path id="sigil-arc" d="M 34,220 A 186,186 0 0 1 406,220"/>
-            <linearGradient id="sigil-grad" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0" stop-color="#f0a16d"/>
-              <stop offset=".55" stop-color="#e20101"/>
-              <stop offset="1" stop-color="#7fd4c1"/>
-            </linearGradient>
-          </defs>
-          <circle class="sigil__ring sigil__ring--outer" cx="220" cy="220" r="208"/>
-          <circle class="sigil__ring sigil__ring--dash" cx="220" cy="220" r="196"/>
-          <circle class="sigil__ring sigil__ring--inner" cx="220" cy="220" r="138"/>
-          <g class="sigil__ticks" id="sigil-ticks"></g>
-          <g class="sigil__runes">
-            <text class="sigil__text">
-              <textPath href="#sigil-arc" startOffset="0">СЭМИАМ НЭПСЭК · АРХИВ 003 · ХАЛФЛИНГ · ПЛУТ ·</textPath>
-            </text>
-          </g>
-          <g class="sigil__spin">
-            <polygon points="220,86 335,279 105,279" fill="none" stroke="url(#sigil-grad)" stroke-width="1"/>
-            <polygon points="220,354 105,161 335,161" fill="none" stroke="url(#sigil-grad)" stroke-width="1" opacity=".45"/>
-            <circle cx="220" cy="220" r="44" fill="none" stroke="url(#sigil-grad)" stroke-width="1"/>
-          </g>
-        </svg>
-
-        <div class="lens" id="lens">
-          <div class="lens__eye">
-            <div class="lens__sclera"></div>
-            <div class="lens__iris">
-              <div class="lens__pupil"></div>
-              <div class="lens__glint"></div>
+          <div class="lens" id="lens">
+            <div class="lens__eye">
+              <div class="lens__sclera"></div>
+              <div class="lens__iris">
+                <div class="lens__pupil"></div>
+                <div class="lens__glint"></div>
+              </div>
+              <div class="lens__sheen"></div>
             </div>
-            <div class="lens__sheen"></div>
+            <div class="lens__rim"></div>
           </div>
-          <div class="lens__rim"></div>
+
+          <span class="hero__tag hero__tag--a">ОПТИКА · СТЕКЛО</span>
+          <span class="hero__tag hero__tag--b">ФОКУС · 30 ФТ</span>
+          <span class="hero__tag hero__tag--c">СИГНАЛ · СЛАБЫЙ</span>
         </div>
 
-        <span class="hero__tag hero__tag--a">ОПТИКА · СТЕКЛО</span>
-        <span class="hero__tag hero__tag--b">ФОКУС · 30 ФТ</span>
-        <span class="hero__tag hero__tag--c">СИГНАЛ · СЛАБЫЙ</span>
-      </div>
+        </div>
 
-      <a class="hero__scroll" href="#dossier" aria-label="Прокрутить к досье">
-        <span>ЛИСТАТЬ ДЕЛО</span>
-        <span class="hero__scroll-line" aria-hidden="true"></span>
-      </a>
+        <div class="hero__shade" aria-hidden="true"></div>
+
+        <div class="hero__content">
+          <p class="hero__eyebrow reveal">
+            <span class="tag"><span class="tag__dot"></span> АРХИВ 003</span>
+            <span class="hero__eyebrow-txt">ДЕЛО О ТИХОМ ВОРЕ</span>
+          </p>
+
+          <h1 class="hero__title" id="hero-title">
+            <span class="hero__line" data-split>СЭМИАМ</span>
+            <span class="hero__line hero__line--ember" data-split>НЭПСЭК</span>
+          </h1>
+
+          <div class="hero__meta reveal">
+            <span>ХАЛФЛИНГ</span><i>/</i>
+            <span>ПЛУТ · 3</span><i>/</i>
+            <span>ХАОТИК-ГУД</span><i>/</i>
+            <span>66 ЛЕТ</span>
+          </div>
+
+          <div class="hero__bottom">
+            <div class="hero__scene-label" aria-hidden="true">
+              <span class="hero__scene-label-num" id="scene-act">01</span>
+              <span class="hero__scene-label-name" id="scene-name">ПАДЕНИЕ</span>
+              <span class="hero__scene-label-line"><i id="scene-progress"></i></span>
+              <span class="hero__scene-label-pct" id="scene-percent">00%</span>
+            </div>
+
+            <p class="hero__lead reveal">
+              66 лет на улицах, которые не любят свидетелей. Один стеклянный глаз,
+              две ячейки заклинаний и абсолютно никакого чувства боли.
+              <em>Он не грабит — он перераспределяет.</em>
+            </p>
+
+            <div class="hero__cta reveal">
+              <a class="btn btn--primary magnetic" href="#dossier">
+                <span>ОТКРЫТЬ ДОСЬЕ</span>
+                <svg class="ico"><use href="#i-down"/></svg>
+              </a>
+              <button class="btn btn--ghost magnetic" type="button" data-roll="ability" data-label="Проверка удачи" data-bonus="0">
+                <svg class="ico"><use href="#i-dice"/></svg>
+                <span>БРОСИТЬ d20</span>
+              </button>
+            </div>
+
+            <dl class="hero__stats reveal">
+              <div><dt>ХИТЫ</dt><dd>15</dd></div>
+              <div><dt>КД</dt><dd>11</dd></div>
+              <div><dt>СКОРОСТЬ</dt><dd>25<span>фт</span></dd></div>
+              <div><dt>МАСТЕРСТВО</dt><dd>+2</dd></div>
+              <div><dt>ОПЫТ</dt><dd>2150<span>xp</span></dd></div>
+            </dl>
+          </div>
+        </div>
+
+        <div class="scene-hud" aria-hidden="true">
+          <span class="scene-hud__live"><i></i> LIVE 3D</span>
+          <span class="scene-hud__dice">D20 · D8 · D4</span>
+          <span class="scene-hud__note">PHYSICS / SCROLL</span>
+        </div>
+
+        <a class="hero__scroll" href="#dossier" aria-label="Прокрутить к досье">
+          <span>ЛИСТАТЬ ДЕЛО</span>
+          <span class="hero__scroll-line" aria-hidden="true"></span>
+        </a>
+        <a class="hero__skip" href="#dossier">ПРОПУСТИТЬ СЦЕНУ</a>
+      </div>
     </section>
 
     <!-- ══════════════ TICKER ══════════════ -->
@@ -1095,5 +1118,6 @@
   <noscript><p class="noscript">Для интерактивных эффектов и бросков костей нужен JavaScript. Текст досье доступен и без него.</p></noscript>
 
   <script src="js/app.js" defer></script>
+  <script src="js/dice-scene.js" defer></script>
 </body>
 </html>
