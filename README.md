@@ -2,7 +2,7 @@
 
 ![Превью сайта](preview.png)
 
-**3D-версия (эта ветка):** https://juneaucross.github.io/nepsack-scene/
+**3D-версия:** https://juneaucross.github.io/nepsack-scene/
 
 **Классическая версия:** https://juneaucross.github.io/nepsack/
 
